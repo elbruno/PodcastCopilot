@@ -6,6 +6,7 @@ print("Imports are complete")
 
 # Inputs about the podcast
 podcast_name = "No Tiene Nombre"
+podcast_episode_name = "NTN160"
 podcast_author = "Bruno Capuano"
 podcast_url = "https://go.ivoox.com/sq/277993"
 podcast_audio_file = "c:\\src\\labs\\PodcastCopilot\\NTN160.mp3" 
@@ -35,11 +36,13 @@ for i, chunk in enumerate(audio_chunks):
         # Append transcript in memory if you have sufficient memory
         transcript += " " + transcriptChunk
 
-        # Alternatively, here's how to write the transcript to disk if you have memory constraints
-        textfile = open("chunk{0}.txt".format(i), "w")
-        textfile.write(transcript)
-        textfile.close()
-        print("Exported chunk{0}.txt".format(i))
+# let's write the transcript to disk, for future exercises
+transcript_filename = f"{podcast_episode_name}.txt"
+textfile = open(transcript_filename, "w")
+transcript_to_txt = transcript.encode("utf-8")
+textfile.write(transcript)
+textfile.close()
+print("Transcript saved to {0}", textfile)
 
 print("Transcript: \n")
 print(transcript)
