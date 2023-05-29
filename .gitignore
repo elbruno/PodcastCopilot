@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Environment values
+.env
+*.wav
+*.mp3
+*.mp4
