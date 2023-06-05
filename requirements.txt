@@ -8,3 +8,6 @@ pydub
 openai
 ffmpeg-python
 onnxruntime-directml>=1.15.0
+python-dotenv
+openai
+langchain
